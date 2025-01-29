@@ -21,30 +21,8 @@
       "128": "icon.png"
     }
   },
-  "commands": {
-    "scroll-top": {
-      "suggested_key": {
-        "default": "Alt+T"
-      },
-      "description": "Scroll to first message"
-    },
-    "scroll-bottom": {
-      "suggested_key": {
-        "default": "Alt+Z"
-      },
-      "description": "Scroll to last message"
-    },
-    "scroll-UpOneMsg": {
-      "suggested_key": {
-        "default": "Alt+A"
-      },
-      "description": "Scroll Up One Message"
-    },
-    "scroll-DownOneMsg": {
-      "suggested_key": {
-        "default": "Alt+S"
-      },
-      "description": "Scroll Down One Message"
-    }
-  }
+  "web_accessible_resources": [{
+    "resources": ["shortcuts.json"],
+    "matches": ["<all_urls>"]
+  }]
 }
