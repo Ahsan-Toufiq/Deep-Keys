@@ -124,8 +124,8 @@ chrome.runtime.onMessage.addListener((request) => {
             highlightMessage(allMessages[0]);
             console.log("Already at the first message, adjusting view.");
         } else {
-            allMessages[-1].scrollIntoView({ behavior: 'smooth', block: 'start' });
-            highlightMessage(allMessages[-1]);
+            allMessages[allMessages.length - 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            highlightMessage(allMessages.length - 1);
             console.log("No message fully visible, scrolling to the first one.");
         }
     }
