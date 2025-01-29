@@ -17,7 +17,7 @@
 
 chrome.commands.onCommand.addListener((command) => {
     console.log("Command received in background: ", command);
-    if (command === 'scroll-top' || command === 'scroll-bottom' || command === 'scroll-UpOneMsg' || command === 'scroll-DownOneMsg' || command === 'response-copy') {
+    if (command === 'scroll-top' || command === 'scroll-bottom' || command === 'scroll-UpOneMsg' || command === 'scroll-DownOneMsg' || command === 'response-copy' || command === 'focus_Chat') {
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, { action: command });
       });

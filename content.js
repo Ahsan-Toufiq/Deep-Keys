@@ -5,7 +5,9 @@ const actionMap = {
   scroll_Top: () => scrollToFirstMessage(),
   scroll_Bottom: () => scrollToLastMessage(),
   copy_Prompt: () => copyLatestDivText("prompt"),
-  copy_Response: () => copyLatestDivText("response")
+  copy_Response: () => copyLatestDivText("response"),
+  focus_Chat: () => focusChatBox()
+  
 };
 
 // Load shortcuts.json
@@ -159,7 +161,25 @@ chrome.runtime.onMessage.addListener((request) => {
             const lastMessage = allMessages[allMessages.length - 1];
             highlightMessage(lastMessage);
         }
-    }  
+    }
+    
+    
+    // Focus chat box
+    function focusChatBox() {
+        // Select the chat input by its ID
+        const chatBox = document.getElementById('chat-input');
+        
+        // Check if the chat box exists before attempting to focus
+        if (chatBox) {
+            chatBox.focus();
+        } else {
+            console.log('Chat box not found!');
+        }
+    }
+    
+    // Call the function to focus the chat box
+    focusChatBox();
+    
 
   
     // Find Last Div 
@@ -217,8 +237,6 @@ chrome.runtime.onMessage.addListener((request) => {
         if (textToCopy) {
             navigator.clipboard.writeText(textToCopy)
         }
-
-    // copyDivText(latestDiv);
     highlightMessage(latestDiv);
 
     }
