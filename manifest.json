@@ -13,12 +13,20 @@
       "js": ["content.js"]
     }
   ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
   "commands": {
-  "scroll-top": {
-    "suggested_key": {
-      "default": "Alt+T"
-    },
-    "description": "Scroll to first message"
+    "scroll-top": {
+      "suggested_key": {
+        "default": "Alt+T"
+      },
+      "description": "Scroll to first message"
     },
     "scroll-bottom": {
       "suggested_key": {
