@@ -12,7 +12,7 @@
       "description": "Scroll Down One Message"
     },
     {
-      "key": "w",
+      "key": "t",
       "altKey": true,
       "action": "scroll_Top",
       "description": "Custom Action W"
