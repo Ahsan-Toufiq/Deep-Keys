@@ -1,69 +1,29 @@
-// Action map connecting JSON actions to functions
-const actionMap = {
-  scroll_UpOneMsg: () => scrollUpOneMessage(),
-  scroll_DownOneMsg: () => scrollDownOneMessage(),
-  scroll_Top: () => scrollToFirstMessage(),
-  scroll_Bottom: () => scrollToLastMessage(),
-  copy_Prompt: () => copyLatestDivText("prompt"),
-  copy_Response: () => copyLatestDivText("response"),
-  focus_Chat: () => focusChatBox()
-  
-};
-
-// Load shortcuts.json
-async function loadShortcuts() {
-  try {
-    const response = await fetch(chrome.runtime.getURL('shortcuts.json'));
-    return await response.json();
-  } catch (error) {
-    console.error('Error loading shortcuts:', error);
-    return [];
+document.addEventListener("keydown", function (event) {
+  if (event.altKey && event.code === "KeyA") {
+      event.preventDefault(); // Prevent default browser behavior
+      scrollUpOneMessage();
+  } else if (event.altKey && event.code === "KeyS") {
+      event.preventDefault();
+      scrollDownOneMessage();
+  } else if (event.altKey && event.code === "KeyT") {
+    event.preventDefault();
+    scrollToFirstMessage();
+  } else if (event.altKey && event.code === "KeyB") {
+    event.preventDefault();
+    scrollToLastMessage();
+  } else if (event.altKey && event.code === "KeyR") {
+    event.preventDefault();
+    copyLatestDivText('response');
+  } else if (event.altKey && event.code === "KeyC") {
+    event.preventDefault();
+    copyLatestDivText('prompt');
+  } else if (event.altKey && event.code === "KeyF") {
+    event.preventDefault();
+    focusChatBox();
   }
-}
-
-// Initialize shortcut listener
-loadShortcuts().then(shortcuts => {
-  document.addEventListener("keydown", (event) => {
-    shortcuts.forEach(shortcut => {
-      if (validateShortcut(event, shortcut)) {
-        event.preventDefault();
-        const action = actionMap[shortcut.action];
-        if (action) {
-          console.log(shortcut.description);
-          action();
-        }
-      }
-    });
-  });
 });
 
-// Validate shortcut match
-function validateShortcut(event, shortcut) {
-  return (
-    event.key.toLowerCase() === shortcut.key.toLowerCase() &&
-    event.altKey === (shortcut.altKey || false) &&
-    event.ctrlKey === (shortcut.ctrlKey || false) &&
-    event.shiftKey === (shortcut.shiftKey || false) &&
-    event.metaKey === (shortcut.metaKey || false)
-  );
-}
 
-
-
-
-chrome.runtime.onMessage.addListener((request) => {
-    if (request.action === 'scroll-top') {
-      scrollToFirstMessage();
-    } else if (request.action === 'scroll-bottom') {
-      scrollToLastMessage();
-    } else if (request.action === 'scroll-UpOneMsg') {
-      scrollUpOneMessage();
-    } else if (request.action === 'prompt-copy') {
-      copyLatestDivText('prompt')
-    } else if (request.action === 'response-copy') {
-      copyLatestDivText('response')
-    }
-  });  
   
   // Scroll to Top
   function scrollToFirstMessage() {

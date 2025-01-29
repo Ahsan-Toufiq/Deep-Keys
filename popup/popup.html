@@ -1,242 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shortcut Settings</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: rgb(0, 0, 0);
-            color: white; 
-        }
-        .popup-container {
-            max-width: 500px;
-            min-width: 350px;
-            background: rgb(65, 65, 88);.popup-container {
-                max-width: 500px;
-                min-width: 350px;
-                background: rgb(65, 65, 88);
-                color: white; 
-                border-radius: 10px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-                padding: 20px;
-                max-height: 500px;
-                overflow-y: auto;
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shortcut Settings</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+            font-family:'Arial',sans-serif;
+            background:#ffffff;
+            color:#000000
             }
+
+            .popup-container {
+            max-width:500px;
+            min-width:350px;
+            background:#ffffff;
+            box-shadow:0 4px 10px rgba(255, 255, 255, 1);
+            padding:20px;
+            max-height:500px;
+            overflow-y:auto;
+            color:#000000;
+            border-radius:10px
+            }
+
             .shortcut-row {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px 0;
-                border-bottom: 1px solid #ddd;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:10px 0;
+            color: black;
+            border-bottom:1px solid #ddd
             }
+
             .shortcut-row:last-child {
-                border-bottom: none;
-            }.popup-container {
-            max-width: 500px;
-            min-width: 350px;
-            background: rgb(65, 65, 88);
-            color: white; 
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            max-height: 500px;
-            overflow-y: auto;
-        }
-        .shortcut-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
-        .shortcut-row:last-child {
-            border-bottom: none;
-        }
-        .shortcut-label {
-            font-weight: 500;
-            color: white; 
-        }
-        .badge{
-            color: white; 
-        }
-        .shortcut-input {
-            width: 50px;
-            text-align: center;
-            border: 1px solid white;
-            border-radius: 5px;
-            color: black;
-        }
+            border-bottom:none
+            }
+
             .shortcut-label {
-                font-weight: 500;
-                color: white; 
+            font-weight:500;
+            color:#000000
             }
-            .badge{
-                color: white; 
+
+            .badge {
+            color:#e0e0e0;
+            background: #4d6bfa;
             }
+
             .shortcut-input {
-                width: 50px;
-                text-align: center;
-                border: 1px solid white;
-                border-radius: 5px;
-                color: black;
+            width:50px;
+            text-align:center;
+            border:1px solid #fff;
+            border-radius:5px;
+            color:#000
             }
-            color: white; 
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            max-height: 500px;
-            overflow-y: auto;
-            
-            /* Scrollbar styling */
-            scrollbar-width: thin;
-            scrollbar-color: rgb(120, 120, 150) rgb(50, 50, 70);
-        }
-        
-        /* Custom scrollbar for modern browsers */
-        .popup-container::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        .popup-container::-webkit-scrollbar-track {
-            background: rgb(50, 50, 70);
-            border-radius: 10px;
-        }
-        
-        .popup-container::-webkit-scrollbar-thumb {
-            background: rgb(120, 120, 150);
-            border-radius: 10px;
-            transition: background 0.3s;
-        }
-        
-        .popup-container::-webkit-scrollbar-thumb:hover {
-            background: rgb(140, 140, 170);
-        }
-        
-        .shortcut-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .shortcut-row:last-child {
-            border-bottom: none;
-        }
-        
-        .shortcut-label {
-            font-weight: 500;
-            color: white; 
-        }
-        
-        .badge {
-            color: white; 
-        }
-        
-        .shortcut-input {
-            width: 50px;
-            text-align: center;
-            border: 1px solid white;
-            border-radius: 5px;
-            color: black;
-        }
-    </style>
-</head>
-<body class="d-flex justify-content-center align-items-center vh-100 bg-light">
-    <div class="container">
-        <div class="popup-container">
-            <h5 class="text-center fw-bold">Navigate Deep Seek with Custom Shortcuts</h5>
-            <div class="mt-3">
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Scroll Up One Message</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="A"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Scroll Down One Message</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="F"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Scroll to Top</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="T"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Scroll to Bottom</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="Z"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">PgUp/PgDown Takeover</span>
-                    <input class="form-check-input" type="checkbox" checked>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Copy</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="C"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Select + Copy</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="C"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Select + Copy options</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="C"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">New Conversation</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="N"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Focus Chat Input</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="N"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Toggle Sidebar</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="S"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Toggle Sidebar Folders</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="S"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Search Chats</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="S"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Search the Web</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="S"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Edit Message</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="S"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Send Edited Message</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="S"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Go to Previous Thread</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="S"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Go to Next Thread</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="S"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Join & Copy All Responses</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="S"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Join & Copy All Code Boxes</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="S"></span>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Hide Buttons</span>
-                    <span class="badge bg-secondary">Alt + <input type="text" class="shortcut-input" value="S"></span>
+        </style>
+    </head>
+    <body class="d-flex justify-content-center align-items-center vh-100 bg-light">
+        <div class="container">
+            <div class="popup-container">
+                <h5 class="text-center fw-bold">Navigate Deep Seek with Custom Shortcuts</h5>
+                <div class="mt-3">
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Scroll Up One Message</span>
+                        <span class="badge" >Alt + A</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Scroll Down One Message</span>
+                        <span class="badge">Alt + S</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Scroll to Top</span>
+                        <span class="badge">Alt + T</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Scroll to Bottom</span>
+                        <span class="badge">Alt + B</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Focus Chat Input</span>
+                        <span class="badge">Alt + F</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Copy Last Response</span>
+                        <span class="badge">Alt + R</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Copy Last Prompt</span>
+                        <span class="badge">Alt + C</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
