@@ -3,7 +3,7 @@ const actionMap = {
   scroll_UpOneMsg: () => scrollUpOneMessage(),
   scroll_DownOneMsg: () => scrollDownOneMessage(),
   scroll_Top: () => scrollToFirstMessage(),
-  scroll_Down: () => scrollToLastMessage(),
+  scroll_Bottom: () => scrollToLastMessage(),
   copy_Prompt: () => copyLatestDivText("prompt"),
   copy_Response: () => copyLatestDivText("response")
 };
