@@ -24,19 +24,19 @@
       "description": "Custom Action W"
     },
     {
-      "key": "q",
+      "key": "r",
       "altKey": true,
       "action": "copy_Response",
       "description": "Custom Action W"
     },
     {
-      "key": "x",
+      "key": "c",
       "altKey": true,
       "action": "copy_Prompt",
       "description": "Custom Action W"
     },
     {
-      "key": "c",
+      "key": "f",
       "altKey": true,
       "action": "focus_Chat",
       "description": "Find Latest Response"
