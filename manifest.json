@@ -4,9 +4,6 @@
   "version": "1.0",
   "permissions": ["activeTab", "scripting"],
   "host_permissions": ["https://chat.deepseek.com/*"],
-  "background": {
-    "service_worker": "background.js"
-  },
   "content_scripts": [
     {
       "matches": ["https://chat.deepseek.com/*"],
@@ -20,9 +17,5 @@
       "48": "icon.png",
       "128": "icon.png"
     }
-  },
-  "web_accessible_resources": [{
-    "resources": ["shortcuts.json"],
-    "matches": ["<all_urls>"]
-  }]
+  }
 }
