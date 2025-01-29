@@ -115,18 +115,18 @@ chrome.runtime.onMessage.addListener((request) => {
         let currentTopIndex = allMessages.findIndex(div => div.getBoundingClientRect().top >= 0);
     
         if (currentTopIndex > 0) {
-        const targetMessage = allMessages[currentTopIndex - 1];
-        targetMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        highlightMessage(targetMessage);
-        console.log("Scrolling to previous message:", targetMessage);
+            const targetMessage = allMessages[currentTopIndex - 1];
+            targetMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            highlightMessage(targetMessage);
+            console.log("Scrolling to previous message:", targetMessage);
         } else if (currentTopIndex === 0) {
-        allMessages[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
-        highlightMessage(allMessages[0]);
-        console.log("Already at the first message, adjusting view.");
+            allMessages[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            highlightMessage(allMessages[0]);
+            console.log("Already at the first message, adjusting view.");
         } else {
-        allMessages[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
-        highlightMessage(allMessages[0]);
-        console.log("No message fully visible, scrolling to the first one.");
+            allMessages[-1].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            highlightMessage(allMessages[-1]);
+            console.log("No message fully visible, scrolling to the first one.");
         }
     }
 
