@@ -31,6 +31,12 @@
         "default": "Alt+A"
       },
       "description": "Scroll Up One Message"
+    },
+    "scroll-DownOneMsg": {
+      "suggested_key": {
+        "default": "Alt+S"
+      },
+      "description": "Scroll Down One Message"
     }
   }
 }

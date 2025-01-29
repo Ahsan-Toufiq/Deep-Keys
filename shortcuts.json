@@ -1,0 +1,44 @@
+[
+    {
+      "key": "s",
+      "altKey": true,
+      "action": "scroll_UpOneMsg",
+      "description": "Scroll Up One Message"
+    },
+    {
+      "key": "d",
+      "altKey": true,
+      "action": "scroll_DownOneMsg",
+      "description": "Scroll Down One Message"
+    },
+    {
+      "key": "w",
+      "altKey": true,
+      "action": "scroll_Top",
+      "description": "Custom Action W"
+    },
+    {
+      "key": "a",
+      "altKey": true,
+      "action": "scroll_Bottom",
+      "description": "Custom Action W"
+    },
+    {
+      "key": "q",
+      "altKey": true,
+      "action": "copy_Response",
+      "description": "Custom Action W"
+    },
+    {
+      "key": "x",
+      "altKey": true,
+      "action": "copy_Prompt",
+      "description": "Custom Action W"
+    },
+    {
+      "key": "c",
+      "altKey": true,
+      "action": "focus_Chat",
+      "description": "Find Latest Response"
+    }
+  ]
