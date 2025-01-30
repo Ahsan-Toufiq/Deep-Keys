@@ -18,7 +18,7 @@ This extension enables users to perform the following actions using shortcut key
 
 1. **Download the repository**:
    ```sh
-   git clone https://github.com/yourusername/deepseek-shortcuts.git
+    https://github.com/Arch-Laboratories/Deep-Keys.git
     ```
 
 2. **Open Chrome Extensions Page**:
