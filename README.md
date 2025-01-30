@@ -43,16 +43,6 @@ The shortcut keys are defined in the `content.js` file. If you want to modify th
 2. Change the key bindings
 3. Reload the extension.
 
-## 📂 Project Structure
-deepseek/
-│── popup/              # Extension UI
-│   ├── popup.html      # HTML file for the popup window
-│── content.js          # Main script for handling shortcuts
-│── icon.png            # Extension icon
-│── manifest.json       # Chrome extension manifest
-│── scrollToTop.js      # script for handling Scroll To Top Shortcut
-│── README.md           # Documentation
-
 ## 🛡️ Permissions
 
 The extension requests the following permissions:
