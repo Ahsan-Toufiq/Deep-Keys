@@ -43,6 +43,7 @@ The shortcut keys are defined in the `content.js` file. If you want to modify th
 2. Change the key bindings
 3. Reload the extension.
 
+## 📂 Project Structure
 deepseek/
 │── popup/              # Extension UI
 │   ├── popup.html      # HTML file for the popup window
