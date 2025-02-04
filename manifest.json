@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "DeepKeys - Shortcuts for DeepSeek",
   "version": "1.0",
   "host_permissions": ["https://chat.deepseek.com/*"],
