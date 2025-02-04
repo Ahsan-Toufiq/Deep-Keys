@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "DeepSeek Shortcuts",
+  "name": "DeepKeys - Shortcuts for DeepSeek",
   "version": "1.0",
   "host_permissions": ["https://chat.deepseek.com/*"],
   "content_scripts": [

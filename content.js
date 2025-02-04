@@ -127,10 +127,8 @@ document.addEventListener("keydown", function (event) {
     
     // Focus chat box
     function focusChatBox() {
-        // Select the chat input by its ID
         const chatBox = document.getElementById('chat-input');
         
-        // Check if the chat box exists before attempting to focus
         if (chatBox) {
             chatBox.focus();
         } else {
