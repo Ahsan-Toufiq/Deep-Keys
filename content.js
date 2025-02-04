@@ -87,7 +87,7 @@ document.addEventListener("keydown", function (event) {
             console.log("Already at the first message, adjusting view.");
         } else {
             allMessages[allMessages.length - 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
-            highlightMessage(allMessages.length - 1);
+            highlightMessage(allMessages[allMessages.length - 1]);
             console.log("No message fully visible, scrolling to the first one.");
         }
     }
@@ -116,6 +116,7 @@ document.addEventListener("keydown", function (event) {
         
         if (nextMessage) {
             nextMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            highlightMessage(nextMessage);
         } else {
             // Highlight the last message instead
             const lastMessage = allMessages[allMessages.length - 1];
