@@ -2,7 +2,6 @@
   "manifest_version": 3,
   "name": "DeepSeek Shortcuts",
   "version": "1.0",
-  "permissions": ["activeTab", "scripting"],
   "host_permissions": ["https://chat.deepseek.com/*"],
   "content_scripts": [
     {
